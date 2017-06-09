@@ -1,0 +1,38 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="rally-confluence3"/>
+    
+    <!-- add our web resources -->
+    <web-resource key="rally-confluence3-resources" name="rally-confluence3 Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        
+        <resource type="download" name="rally-confluence3.css" location="/css/rally-confluence3.css"/>
+        <resource type="download" name="rally-confluence3.js" location="/js/rally-confluence3.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>rally-confluence3</context>
+    </web-resource>
+
+    <xhtml-macro name="helloworld" class="com.tavant.rally.confluence.macro.helloworld" key='helloworld-macro'>
+        <description key="helloworld.macro.desc"/>
+        <category name="formatting"/>
+        <parameters/>
+    </xhtml-macro>
+
+    <xhtml-macro name="rallymacro" class="com.tavant.rally.confluence.macro.RallyMacro" key='rally-macro'>
+        <description key="rallymacro.macro.desc"/>
+        <category name="formatting"/>
+        <parameters>
+            <parameter name="Count" type="string" />
+        </parameters>
+    </xhtml-macro>
+    
+</atlassian-plugin>
