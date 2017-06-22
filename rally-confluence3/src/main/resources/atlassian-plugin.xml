@@ -31,7 +31,9 @@
         <description key="rallymacro.macro.desc"/>
         <category name="formatting"/>
         <parameters>
-            <parameter name="Count" type="string" />
+            <parameter name="DefectID" type="string" />
+            <parameter name="FormattedID" type="string" />
+            <parameter name="Priority" type="string" />
         </parameters>
     </xhtml-macro>
     
